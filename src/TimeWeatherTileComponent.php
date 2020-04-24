@@ -21,7 +21,7 @@ class TimeWeatherTileComponent extends Component
         return view('components.tiles.timeWeather', [
             'city' => $weatherStore->getCity(),
             'forecasts' => $weatherStore->forecasts(),
-            'outsideTemperature'  => $weatherStore->outsideTemperature(),
+            'outsideTemperature' => $weatherStore->outsideTemperature(),
             'emoji' => $weatherStore->getEmoji(),
         ]);
     }
