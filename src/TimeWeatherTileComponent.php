@@ -18,7 +18,7 @@ class TimeWeatherTileComponent extends Component
     {
         $weatherStore = TimeWeatherStore::make();
 
-        return view('components.tiles.timeWeather', [
+        return view('dashboard-time-weather-tile::tile', [
             'city' => $weatherStore->getCity(),
             'forecasts' => $weatherStore->forecasts(),
             'outsideTemperature' => $weatherStore->outsideTemperature(),
