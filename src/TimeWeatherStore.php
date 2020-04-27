@@ -3,6 +3,7 @@
 namespace Spatie\TimeWeatherTile;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Spatie\Dashboard\Models\Tile;
 
 class TimeWeatherStore
