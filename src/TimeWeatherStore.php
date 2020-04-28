@@ -56,52 +56,52 @@ class TimeWeatherStore
     {
         $weatherReport = $this->tile->getData('weatherReport');
 
-        $weatherId = Arr::get($weatherReport, 'weather.0.id');
+        $weatherId = (string)Arr::get($weatherReport, 'weather.0.id');
 
-        if (is_null($weatherId)) {
+        if (empty($weatherId)) {
             return '🧐';
         }
 
-        $group = ((string)$weatherId)[0];
-        if ($group === 2) {
+        $group = $weatherId[0];
+        if ($group === '2') {
             return '⛈';
         }
 
-        if ($group === 3) {
+        if ($group === '3') {
             return '☔';
         }
 
-        if ($group === 5) {
+        if ($group === '5') {
             return '☔';
         }
 
-        if ($group === 6) {
+        if ($group === '6') {
             return '☃';
         }
 
-        if ($weatherId >= 700 && $weatherId <= 762) {
+        if ($weatherId >= '700' && $weatherId <= '762') {
             return '🌫';
         }
 
-        if ($weatherId === 781) {
+        if ($weatherId === '781') {
             return '🌪';
         }
 
-        if ($weatherId === 771) {
+        if ($weatherId === '771') {
             return '💨';
         }
 
-        if ($weatherId === 800) {
+        if ($weatherId === '800') {
             $isNight = Str::endsWith(Arr::get($weatherReport, 'weather.0.icon'), 'n');
 
             return $isNight ? '🌌' : '☀';
         }
 
-        if ($weatherId === 801) {
+        if ($weatherId === '801') {
             return '⛅';
         }
 
-        if ($group === 8) {
+        if ($group === '8') {
             return '☁';
         }
 
