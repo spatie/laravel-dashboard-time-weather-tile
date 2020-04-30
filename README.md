@@ -6,8 +6,6 @@
 
 This tile can used on the [Laravel Dashboard](https://github.com/spatie/laravel-dashboard) to display events on a Google calendar.
 
-![screenshot](TODO: add link)
-
 ## Support us
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us). 
@@ -16,7 +14,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 
 ## Documentation
 
-All documentation is available [on our documentation site](https://docs.spatie.be/laravel-dashboard/v1/adding-tiles/google-calendar).
+All documentation is available [on our documentation site](https://docs.spatie.be/laravel-dashboard/v1/adding-tiles/time-weather-tile).
 
 ## Testing
 
