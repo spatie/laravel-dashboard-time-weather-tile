@@ -49,7 +49,7 @@
 
                 get date() {
                     const day = this.dateTime
-                        .toLocaleDateString('en-US', { weekday: 'long' })
+                        .toLocaleDateString('{{ app()->getLocale() }}', { weekday: 'long' })
                         .substr(0, 3);
 
                     const date = [
