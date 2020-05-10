@@ -17,6 +17,7 @@ class FetchOpenWeatherMapDataCommand extends Command
         $weatherReport = OpenWeatherMap::getWeatherReport(
             config('dashboard.tiles.time_weather.open_weather_map_key'),
             config('dashboard.tiles.time_weather.open_weather_map_city'),
+            config('dashboard.tiles.time_weather.units'),
         );
 
         TimeWeatherStore::make()->setWeatherReport($weatherReport);
