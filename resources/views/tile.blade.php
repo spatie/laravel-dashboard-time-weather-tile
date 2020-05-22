@@ -11,11 +11,10 @@
 
         <div wire:poll.600s class="uppercase">
             <div class="flex w-full justify-center space-x-4 items-center">
-                <span> {{ $outsideTemperature }}° <span class="text-sm uppercase text-dimmed">out</span> </span>
-
+                <span> {{ $outsideTemperature }}°{{ $unit == 'metric' ? 'C': 'F'}}  <span class="text-sm uppercase text-dimmed">out</span></span>
                 <span class="text-2xl">{{ $emoji }}</span>
             </div>
-            <div class="hidden">{{ $city }}</div>
+            <div class="text-xs">{{ $city }}, {{ $countryCode }}</div>
         </div>
 
         <div

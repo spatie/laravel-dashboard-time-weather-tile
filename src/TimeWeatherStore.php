@@ -98,7 +98,9 @@ class TimeWeatherStore
         }
 
         if ($weatherId === '801') {
-            return '⛅';
+            $isNight = Str::endsWith(Arr::get($weatherReport, 'weather.0.icon'), 'n');
+
+            return $isNight? '☁' :'⛅';
         }
 
         if ($group === '8') {
@@ -111,5 +113,10 @@ class TimeWeatherStore
     public function getCity(): ?string
     {
         return $this->tile->getData('weatherReport.name');
+    }
+
+    public function getCountryCode(): ?string
+    {
+        return $this->tile->getData('weatherReport.sys.country');
     }
 }

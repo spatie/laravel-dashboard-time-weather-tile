@@ -20,9 +20,11 @@ class TimeWeatherTileComponent extends Component
 
         return view('dashboard-time-weather-tile::tile', [
             'city' => $weatherStore->getCity(),
+            'countryCode' => $weatherStore->getCountryCode(),
             'forecasts' => $weatherStore->forecasts(),
             'outsideTemperature' => $weatherStore->outsideTemperature(),
             'emoji' => $weatherStore->getEmoji(),
+            'unit' => config('dashboard.tiles.time_weather.units') ?? 'metric',
         ]);
     }
 }
