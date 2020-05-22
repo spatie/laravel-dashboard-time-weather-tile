@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-dashboard-time-weather-tile` will be documented in this file
 
+## 1.2.0 - 2020-05-23
+
+- add country + fix night emoji's
+
 ## 1.1.0 - 2020-05-11
 
 - make units configurable (#3)
