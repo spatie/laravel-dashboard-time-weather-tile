@@ -30,7 +30,7 @@
                 <div
                     class="rounded-sm bg-accent"
                     style="height:{{ $forecast['rain'] * 100 }}%"
-                />
+                ></div>
             @endforeach
         </div>
     </div>
