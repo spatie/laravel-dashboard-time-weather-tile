@@ -22,6 +22,7 @@ class TimeWeatherTileComponent extends Component
             'city' => $weatherStore->getCity(),
             'countryCode' => $weatherStore->getCountryCode(),
             'forecasts' => $weatherStore->forecasts(),
+            'insideTemperature' => $weatherStore->insideTemperature(),
             'outsideTemperature' => $weatherStore->outsideTemperature(),
             'emoji' => $weatherStore->getEmoji(),
             'unit' => config('dashboard.tiles.time_weather.units') ?? 'metric',

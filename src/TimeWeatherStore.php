@@ -39,11 +39,29 @@ class TimeWeatherStore
         return $this;
     }
 
+    public function setInsideTemperature(int $temperature): self
+    {
+        $this->tile->putData('insideTemperature', $temperature);
+
+        return $this;
+    }
+
     public function outsideTemperature(): ?int
     {
         $weatherReport = $this->tile->getData('weatherReport');
 
         $temperature = Arr::get($weatherReport, 'main.temp');
+
+        if (is_null($temperature)) {
+            return null;
+        }
+
+        return (int)$temperature;
+    }
+
+    public function insideTemperature(): ?int
+    {
+        $temperature = $this->tile->getData('insideTemperature');
 
         if (is_null($temperature)) {
             return null;

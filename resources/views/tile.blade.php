@@ -13,6 +13,7 @@
             <div class="flex w-full justify-center space-x-4 items-center">
                 <span> {{ $outsideTemperature }}°{{ $unit == 'metric' ? 'C': 'F'}}  <span class="text-sm uppercase text-dimmed">out</span></span>
                 <span class="text-2xl">{{ $emoji }}</span>
+                <span> {{ $insideTemperature }}°{{ $unit == 'metric' ? 'C': 'F'}}  <span class="text-sm uppercase text-dimmed">in</span></span>
             </div>
             <div class="text-xs">{{ $city }}, {{ $countryCode }}</div>
         </div>
