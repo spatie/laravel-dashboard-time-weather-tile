@@ -2,8 +2,8 @@
 
 namespace Spatie\TimeWeatherTile\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\Request;
 use Spatie\TimeWeatherTile\TimeWeatherStore;
 
 class UpdateTemperatureController
