@@ -20,8 +20,10 @@ class FetchBuienradarForecastsCommand extends Command
             config('dashboard.tiles.time_weather.buienradar_latitude'),
             config('dashboard.tiles.time_weather.buienradar_longitude')
         );
-
-        TimeWeatherStore::make()->setForecasts($forecasts);
+        
+        if ($forecasts) {
+            TimeWeatherStore::make()->setForecasts($forecasts);
+        }
 
         $this->info('All done!');
     }
