@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-dashboard-time-weather-tile` will be documented in this file
 
+## 1.3.1 - 2020-06-30
+
+- Don't crash the tile when Buienradar is unavailable
+
 ## 1.3.0 - 2020-06-26
 
 - add endpoint to display inside temperature
