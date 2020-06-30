@@ -22,7 +22,7 @@
             wire:poll.60s
             class="absolute bottom-0 left-0 w-full grid items-end"
             style="
-                height: calc(1.25 * var(--tile-padding));
+                height: 100%;
                 grid-gap: 1px;
                 grid-template-columns: repeat(12, 1fr);
                 opacity: .15"
