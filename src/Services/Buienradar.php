@@ -6,21 +6,17 @@ use Illuminate\Support\Facades\Http;
 
 class Buienradar
 {
-    public static function getForecasts(string $latitude, string $longitude)
+    public static function getForecasts(string $latitude, string $longitude): ?array
     {
-        $endpoint = "https://graphdata.buienradar.nl/forecast/json/?lat={$latitude}&lon={$longitude}";
+        $response = Http::get("https://graphdata.buienradar.nl/forecast/json/?lat={$latitude}&lon={$longitude}");
 
-        if (! Http::get($endpoint)->ok()) {
-            return false;
+        if (! $response->ok()) {
+            return [];
         }
 
-        $response = Http::get($endpoint)->json();
+        $data = $response->json();
 
-        if (! $response || (is_array($response) && count($response) === 0) || (is_array($response['forecasts']) && count($response['forecasts']) === 0)) {
-            return false;
-        }
-
-        return collect($response['forecasts'])
+        return collect($data['forecasts'] ?? [])
             ->map(function (array $forecast) {
                 return [
                     'time' => $forecast['datetime'],
