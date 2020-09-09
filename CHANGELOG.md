@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-dashboard-time-weather-tile` will be documented in this file
 
+## 2.0.0 - 2020-09-09
+
+- add support for Dashboard v2
+
 ## 1.3.2 - 2020-07-01
 
 - Style fix
