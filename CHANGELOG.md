@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-dashboard-time-weather-tile` will be documented in this file
 
+## 2.0.2 - 2021-06-03
+
+- don't display insideTemperature span if unset (#10)
+
 ## 2.0.1 - 2020-12-12
 
 - add support for PHP 8
