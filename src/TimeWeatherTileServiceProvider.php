@@ -20,7 +20,7 @@ class TimeWeatherTileServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__ . '/routes.php');
 
         $this->publishes([
             __DIR__ . '/../resources/views' => resource_path('views/vendor/dashboard-time-weather-tile'),

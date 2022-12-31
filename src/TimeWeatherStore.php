@@ -118,7 +118,7 @@ class TimeWeatherStore
         if ($weatherId === '801') {
             $isNight = Str::endsWith(Arr::get($weatherReport, 'weather.0.icon'), 'n');
 
-            return $isNight? '☁' :'⛅';
+            return $isNight ? '☁' : '⛅';
         }
 
         if ($group === '8') {
