@@ -2,19 +2,12 @@
 
 namespace Spatie\TimeWeatherTile;
 
-use Livewire\Component;
+use Illuminate\Contracts\View\View;
+use Spatie\Dashboard\Components\BaseTileComponent;
 
-class TimeWeatherTileComponent extends Component
+class TimeWeatherTileComponent extends BaseTileComponent
 {
-    /** @var string */
-    public $position;
-
-    public function mount(string $position)
-    {
-        $this->position = $position;
-    }
-
-    public function render()
+    public function render(): View
     {
         $weatherStore = TimeWeatherStore::make();
 

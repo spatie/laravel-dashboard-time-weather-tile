@@ -2,18 +2,15 @@
 
 namespace Spatie\TimeWeatherTile\Http\Controllers;
 
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Spatie\TimeWeatherTile\TimeWeatherStore;
 
 class UpdateTemperatureController
 {
-    use ValidatesRequests;
-
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): string
     {
-        $temperature = $this->validate($request, [
-            'temperature' => 'required|numeric',
+        $temperature = $request->validate([
+            'temperature' => ['required', 'numeric'],
         ]);
 
         $temperature = round($temperature['temperature'], 1);

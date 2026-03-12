@@ -10,9 +10,9 @@ class TimeWeatherStore
 {
     private Tile $tile;
 
-    public static function make()
+    public static function make(): static
     {
-        return new static();
+        return new static;
     }
 
     public function __construct()
@@ -56,7 +56,7 @@ class TimeWeatherStore
             return null;
         }
 
-        return (int)$temperature;
+        return (int) $temperature;
     }
 
     public function insideTemperature(): ?int
@@ -67,14 +67,14 @@ class TimeWeatherStore
             return null;
         }
 
-        return (int)$temperature;
+        return (int) $temperature;
     }
 
     public function getEmoji(): string
     {
         $weatherReport = $this->tile->getData('weatherReport');
 
-        $weatherId = (string)Arr::get($weatherReport, 'weather.0.id');
+        $weatherId = (string) Arr::get($weatherReport, 'weather.0.id');
 
         if (empty($weatherId)) {
             return '🧐';
@@ -118,7 +118,7 @@ class TimeWeatherStore
         if ($weatherId === '801') {
             $isNight = Str::endsWith(Arr::get($weatherReport, 'weather.0.icon'), 'n');
 
-            return $isNight? '☁' :'⛅';
+            return $isNight ? '☁' : '⛅';
         }
 
         if ($group === '8') {

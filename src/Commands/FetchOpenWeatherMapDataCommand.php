@@ -12,7 +12,7 @@ class FetchOpenWeatherMapDataCommand extends Command
 
     protected $description = 'Fetch Open Weather Map data';
 
-    public function handle()
+    public function handle(): void
     {
         $weatherReport = OpenWeatherMap::getWeatherReport(
             config('dashboard.tiles.time_weather.open_weather_map_key'),

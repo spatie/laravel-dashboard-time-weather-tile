@@ -9,7 +9,7 @@ use Spatie\TimeWeatherTile\Commands\FetchOpenWeatherMapDataCommand;
 
 class TimeWeatherTileServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         Livewire::component('time-weather-tile', TimeWeatherTileComponent::class);
 
@@ -23,9 +23,9 @@ class TimeWeatherTileServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         $this->publishes([
-            __DIR__ . '/../resources/views' => resource_path('views/vendor/dashboard-time-weather-tile'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/dashboard-time-weather-tile'),
         ], 'dashboard-time-weather-tile-views');
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'dashboard-time-weather-tile');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'dashboard-time-weather-tile');
     }
 }
