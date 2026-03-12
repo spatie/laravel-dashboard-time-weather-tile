@@ -28,14 +28,14 @@ abstract class TestCase extends Orchestra
 
     protected function defineEnvironment($app): void
     {
-        $app['config']->set('app.key', 'base64:' . base64_encode(random_bytes(32)));
+        $app['config']->set('app.key', 'base64:'.base64_encode(random_bytes(32)));
     }
 
     protected function setUpDatabase(): void
     {
         Schema::dropIfExists('dashboard_tiles');
 
-        $migration = include __DIR__ . '/../vendor/spatie/laravel-dashboard/database/migrations/create_dashboard_tiles_table.php.stub';
+        $migration = include __DIR__.'/../vendor/spatie/laravel-dashboard/database/migrations/create_dashboard_tiles_table.php.stub';
         $migration->up();
     }
 }
