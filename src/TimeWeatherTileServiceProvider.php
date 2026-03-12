@@ -9,7 +9,7 @@ use Spatie\TimeWeatherTile\Commands\FetchOpenWeatherMapDataCommand;
 
 class TimeWeatherTileServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         Livewire::component('time-weather-tile', TimeWeatherTileComponent::class);
 

@@ -12,7 +12,7 @@ class FetchBuienradarForecastsCommand extends Command
 
     protected $description = 'Fetch Buienradar forecasts';
 
-    public function handle()
+    public function handle(): void
     {
         $this->info('Fetching Buienradar forecasts...');
 
