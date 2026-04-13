@@ -41,6 +41,7 @@
         function clock() {
             return {
                 dateTime: new Date(),
+                timezone: '{{ config('dashboard.tiles.time_weather.timezone', 'Europe/Brussels') }}',
 
                 tick() {
                     setInterval(() => {
@@ -50,22 +51,25 @@
 
                 get date() {
                     const day = this.dateTime
-                        .toLocaleDateString('{{ app()->getLocale() }}', { weekday: 'long' })
+                        .toLocaleDateString('{{ app()->getLocale() }}', { weekday: 'long', timeZone: this.timezone })
                         .substr(0, 3);
 
-                    const date = [
-                        this.dateTime.getDate(),
-                        this.dateTime.getMonth() + 1,
-                    ].map(this.padNumber).join('/');
+                    const dateNum = this.dateTime.toLocaleDateString('en-GB', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        timeZone: this.timezone,
+                    });
 
-                    return `${day} ${date}`;
+                    return `${day} ${dateNum}`;
                 },
 
                 get time() {
-                    return [
-                        this.dateTime.getHours(),
-                        this.dateTime.getMinutes(),
-                    ].map(this.padNumber).join(':');
+                    return this.dateTime.toLocaleTimeString('{{ app()->getLocale() }}', {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: false,
+                        timeZone: this.timezone,
+                    });
                 },
 
                 padNumber(number) {
